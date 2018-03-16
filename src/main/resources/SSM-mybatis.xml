@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--配置连接池-->
+    <bean class="org.apache.commons.dbcp2.BasicDataSource"
+          id="dataSource">
+
+        <property name="driverClassName"
+                  value="com.mysql.jdbc.Driver"/>
+        <property name="url" value="jdbc:mysql://47.104.87.243:3306/stu"/>
+        <property name="username" value="root"/>
+        <property name="password" value="lzhrLZHR"/>
+
+    </bean>
+
+    <!--创建工厂类-->
+    <bean class="org.mybatis.spring.SqlSessionFactoryBean"
+          id="sessionFactory">
+
+        <!--引入上面配置好的dataSource-->
+        <property name="dataSource" ref="dataSource"/>
+
+        <!--所有mapper.xml文件的地址-->
+        <property name="mapperLocations"
+                  value="classpath:com/lanou/mapper/*.xml"/>
+    </bean>
+
+    <!--mapper扫描器: 扫描mapper接口文件-->
+    <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+
+        <!--接口文件所在的包-->
+        <property name="basePackage" value="com.lanou.mapper"/>
+
+        <property name="sqlSessionFactoryBeanName"
+                  value="sessionFactory"/>
+
+    </bean>
+
+    <!--配置事务管理器-->
+    <bean class="org.springframework.jdbc.datasource.DataSourceTransactionManager"
+          id="transactionManager">
+        <property name="dataSource" ref="dataSource"/>
+    </bean>
+
+</beans>

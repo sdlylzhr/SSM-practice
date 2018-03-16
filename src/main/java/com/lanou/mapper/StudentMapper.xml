@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lanou.mapper.StudentMapper">
+
+    <resultMap id="StudentMap" type="com.lanou.bean.Student">
+        <id column="id" property="id"/>
+        <result column="name" property="name"/>
+        <result column="hobby" property="hobby"/>
+    </resultMap>
+
+    <select id="selectByStudentId" resultMap="StudentMap">
+        SELECT *
+        FROM student
+        WHERE id = #{sid}
+    </select>
+
+    <insert id="insert" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO student ( name, hobby)
+        VALUES ( #{name}, #{hobby})
+    </insert>
+
+    <select id="findAllStudents"
+            resultMap="StudentMap">
+        SELECT *
+        FROM student
+    </select>
+
+</mapper>
