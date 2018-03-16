@@ -94,11 +94,8 @@ public class LuceneDao {
         IndexSearcher indexSearcher =  LuceneUtils.getIndexSearcherOfSP();
 
         /**同义词处理*/
-//        String result = SynonymAnalyzerUtil.displayTokens(SynonymAnalyzerUtil.convertSynonym(SynonymAnalyzerUtil.analyzeChinese(keywords, true)));
-//        Analyzer analyzer4 = new IKAnalyzer(false);// 普通简陋语意分词
-//        String result = keywords;
         //需要根据哪几个字段进行检索...
-        String fields[] = {"stuName"};
+        String fields[] = {"stuName","stuHobby"};
 
         //查询分析程序（查询解析）
         QueryParser queryParser = new MultiFieldQueryParser(fields, LuceneUtils.getAnalyzer());
@@ -144,11 +141,14 @@ public class LuceneDao {
             String stuName = highlighter.getBestFragment(tokenStream, document.get("stuName"));
             System.out.println("StuName="+stuName);
             System.out.println("==========================");
-            /**获取文字高亮的信息end*/
 
-            //备注：document.get("id")的返回值是String
-//            goodDetails.setGoodId((document.get("id")));
-//            goodDetails.setGoodName(goodName);
+            TokenStream tokenStream1 = LuceneUtils.getAnalyzer().tokenStream("stuHobby", new StringReader(document.get("stuHobby")));
+            String stuHobby = highlighter.getBestFragment(tokenStream, document.get("stuHobby"));
+            System.out.println("StuHobby="+stuHobby);
+
+            System.out.println("==========================");
+
+            /**获取文字高亮的信息end*/
 
             student.setId(Integer.parseInt(document.get("id")));
             student.setName(document.get("stuName"));

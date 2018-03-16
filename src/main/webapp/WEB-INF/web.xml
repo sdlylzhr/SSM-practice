@@ -12,6 +12,19 @@
         <param-value>classpath:SSM-mybatis.xml</param-value>
     </context-param>
 
+
+    <filter>
+        <filter-name>CharacterEncodingFilter</filter-name>
+        <filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
+        <init-param>
+            <param-name>encoding</param-name>
+            <param-value>UTF-8</param-value>
+        </init-param>
+    </filter>
+    <filter-mapping>
+        <filter-name>CharacterEncodingFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
     <!--每次web.xml被读取的时候,
     监听器会把上面的context-param标签提供的配置文件一并读取.
     提供给spring-->

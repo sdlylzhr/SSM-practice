@@ -19,15 +19,13 @@ import java.nio.file.FileSystems;
 
 public class LuceneUtils {
     private static FSDirectory directory_sp = null;
-    public static final String INDEXURL_ALL = "/Users/lizhongren1/IdeaProjects/Lesson1106/SSM_pra/src/main/resources/index";
+    public static final String INDEXURL_ALL = "Luceneindex";
 
     private static IndexWriterConfig config = null;
 
     private static Version matchVersion = null;
 
     private static Analyzer analyzer = null;
-
-    private static Directory ramDirectory = null;
 
 
     static {

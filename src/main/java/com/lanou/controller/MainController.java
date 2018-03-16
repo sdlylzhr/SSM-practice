@@ -34,13 +34,18 @@ import java.util.Random;
 @Controller
 public class MainController {
 
-
     @Resource
     private StudentService studentService;
 
-    @RequestMapping(value = "/home")
+    @RequestMapping(value = {"/home","/"})
     public String homePage(){
         return "home";
+    }
+
+
+    @RequestMapping(value = "/searchpage")
+    public String searchPage(){
+        return "search";
     }
 
     @ResponseBody
@@ -53,7 +58,6 @@ public class MainController {
     @ResponseBody
     @RequestMapping(value = "/search")
     public List<Student> searchStu(@RequestParam("keyword") String keyword){
-
 
         return studentService.searchStu(keyword);
     }
