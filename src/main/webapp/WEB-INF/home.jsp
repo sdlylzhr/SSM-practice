@@ -24,7 +24,7 @@
     <input type="submit" value="添加新学生">
 </form>
 
-<a href="/searchpage">查询页面</a>
+<a href="/1106lzhr_99/searchpage">查询页面</a>
 
 
 </body>

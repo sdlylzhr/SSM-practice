@@ -57,9 +57,9 @@ public class MainController {
 
     @ResponseBody
     @RequestMapping(value = "/search")
-    public List<Student> searchStu(@RequestParam("keyword") String keyword){
+    public List<Student> searchStu(@RequestParam("keyword") String key){
 
-        return studentService.searchStu(keyword);
+        return studentService.searchStu(key);
     }
 
     @ResponseBody

@@ -8,7 +8,6 @@ import java.util.List;
 
 public interface StudentMapper {
     int insert(Student record);
-
     Student selectByStudentId(@Param("sid") Integer id);
 
     List<Student> findAllStudents();

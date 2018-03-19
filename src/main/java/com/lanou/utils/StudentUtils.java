@@ -11,9 +11,6 @@ import org.apache.lucene.document.TextField;
  */
 public class StudentUtils {
 
-    /*
-     * 将GoodDetails 转换成document 将GoodDetails 的值设置到document里面去...
-     */
     public static Document studentToDocument(Student student) {
 
         Document document = new Document();
