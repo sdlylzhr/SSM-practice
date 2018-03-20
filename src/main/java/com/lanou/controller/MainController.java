@@ -57,8 +57,7 @@ public class MainController {
 
     @ResponseBody
     @RequestMapping(value = "/search")
-    public AjaxResult searchStu(@RequestParam("keyword") String key,
-                                   @RequestParam("name") String aname){
+    public AjaxResult searchStu(@RequestParam("keyword") String key){
 
         return studentService.searchStu(key);
     }

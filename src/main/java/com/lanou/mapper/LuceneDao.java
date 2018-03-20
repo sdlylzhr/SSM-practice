@@ -93,7 +93,6 @@ public class LuceneDao {
         Directory directory = FSDirectory.open(FileSystems.getDefault().getPath(LuceneUtils.INDEXURL_ALL));//索引创建在硬盘上。
         IndexSearcher indexSearcher =  LuceneUtils.getIndexSearcherOfSP();
 
-        /**同义词处理*/
         //需要根据哪几个字段进行检索...
         String fields[] = {"stuName","stuHobby"};
 

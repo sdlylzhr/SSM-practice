@@ -16,9 +16,9 @@ public class StudentUtils {
         Document document = new Document();
 
         StringField idfield = new StringField("id", String.valueOf(student.getId()), Field.Store.YES);
-
         TextField namefield = new TextField("stuName", student.getName(), Field.Store.YES);
         TextField hobbyfield = new TextField("stuHobby", student.getHobby(), Field.Store.YES);
+
         document.add(idfield);
         document.add(namefield);
         document.add(hobbyfield);
