@@ -1,6 +1,7 @@
 package com.lanou.service;
 
 import com.lanou.bean.Student;
+import com.lanou.utils.AjaxResult;
 
 import java.util.List;
 
@@ -9,10 +10,10 @@ import java.util.List;
  */
 public interface StudentService {
 
-    List<Student> findAllStu();
+    AjaxResult findAllStu();
 
-    Student insertStu(Student student);
-    List<Student> searchStu(String keywords);
+    AjaxResult insertStu(Student student);
+    AjaxResult searchStu(String keywords);
 
 
 }

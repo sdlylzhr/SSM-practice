@@ -50,26 +50,24 @@ public class MainController {
 
     @ResponseBody
     @RequestMapping(value = "/getall")
-    public List<Student> allStu(){
+    public AjaxResult allStu(){
 
         return studentService.findAllStu();
     }
 
     @ResponseBody
     @RequestMapping(value = "/search")
-    public List<Student> searchStu(@RequestParam("keyword") String key){
+    public AjaxResult searchStu(@RequestParam("keyword") String key,
+                                   @RequestParam("name") String aname){
 
         return studentService.searchStu(key);
     }
 
     @ResponseBody
     @RequestMapping(value = "/addnew")
-    public Student addNew(Student student){
+    public AjaxResult addNew(Student student){
 
-        Student stu1 = studentService.insertStu(student);
-
-        System.out.println(stu1);
-        return stu1;
+        return studentService.insertStu(student);
     }
 
 
