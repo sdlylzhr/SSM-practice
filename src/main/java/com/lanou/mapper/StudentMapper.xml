@@ -10,19 +10,19 @@
 
     <select id="selectByStudentId" resultMap="StudentMap">
         SELECT *
-        FROM student
-        WHERE id = #{sid}
+        FROM LESSON
+        WHERE "id" = #{sid}
     </select>
 
-    <insert id="insert" useGeneratedKeys="true" keyProperty="id">
-        INSERT INTO student ( name, hobby)
-        VALUES ( #{name}, #{hobby})
+    <insert id="insert">
+        INSERT INTO "student" ("id", "name", "hobby")
+        VALUES (3,'zhangsan','sleep')
     </insert>
 
     <select id="findAllStudents"
             resultMap="StudentMap">
-        SELECT *
-        FROM student
+        SELECT count("hobby")
+        FROM "student"
     </select>
 
 </mapper>
