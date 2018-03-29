@@ -37,7 +37,6 @@ public class LuceneDao {
 	 *
 	 * */
 
-
     /*
      * 建立索引
      * */

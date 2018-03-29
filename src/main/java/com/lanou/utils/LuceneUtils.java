@@ -1,6 +1,5 @@
 package com.lanou.utils;
 
-//import com.fuzhu.utils.Constant;
 import com.hankcs.lucene.HanLPAnalyzer;
 import org.apache.lucene.analysis.Analyzer;
 import org.apache.lucene.index.DirectoryReader;
@@ -11,9 +10,7 @@ import org.apache.lucene.search.IndexSearcher;
 import org.apache.lucene.store.Directory;
 import org.apache.lucene.store.FSDirectory;
 import org.apache.lucene.store.RAMDirectory;
-import org.apache.lucene.util.Version;
 
-import java.io.File;
 import java.io.IOException;
 import java.nio.file.FileSystems;
 
