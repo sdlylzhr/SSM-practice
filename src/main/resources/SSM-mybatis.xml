@@ -7,17 +7,11 @@
     <bean class="org.apache.commons.dbcp2.BasicDataSource"
           id="dataSource">
 
-        <property name="driverClassName" value="oracle.jdbc.OracleDriver"/>
-        <property name="url" value="jdbc:oracle:thin:@47.104.87.243:1521:orcl11g"/>
-        <property name="username" value="lzhr"/>
-        <property name="password" value="lzhr1"/>
-
-
-        <!--<property name="driverClassName"-->
-        <!--value="com.mysql.jdbc.Driver"/>-->
-        <!--<property name="url" value="jdbc:mysql://47.104.87.243:3306/stu"/>-->
-        <!--<property name="username" value="root"/>-->
-        <!--<property name="password" value="lzhrLZHR"/>-->
+        <property name="driverClassName"
+        value="com.mysql.jdbc.Driver"/>
+        <property name="url" value="jdbc:mysql://47.104.87.243:3306/stu"/>
+        <property name="username" value="root"/>
+        <property name="password" value="lzhrLZHR"/>
 
     </bean>
 
