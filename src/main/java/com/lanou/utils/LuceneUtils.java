@@ -23,16 +23,12 @@ public class LuceneUtils {
 
     private static IndexWriterConfig config = null;
 
-    private static Version matchVersion = null;
-
     private static Analyzer analyzer = null;
-
 
     static {
         try {
             directory_sp = FSDirectory.open(FileSystems.getDefault()
                     .getPath(INDEXURL_ALL));
-            matchVersion = Version.LUCENE_6_0_0;
             analyzer = new HanLPAnalyzer();
             config = new IndexWriterConfig( analyzer);
             System.out.println("directory_sp    " + directory_sp);
@@ -66,13 +62,6 @@ public class LuceneUtils {
         IndexSearcher indexSearcher = new IndexSearcher(indexReader);
 
         return indexSearcher;
-    }
-
-    /*
-     * 获取lucene当前的版本
-     * */
-    public static Version getMatchVersion() {
-        return matchVersion;
     }
 
     /*
